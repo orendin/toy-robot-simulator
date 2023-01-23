@@ -1,4 +1,6 @@
-﻿namespace ToyRobotSimulator
+﻿using ToyRobotSimulator.Commands;
+
+namespace ToyRobotSimulator
 {
     public class RobotController
     {

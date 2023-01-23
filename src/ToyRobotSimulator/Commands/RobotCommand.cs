@@ -1,11 +1,11 @@
-﻿namespace ToyRobotSimulator
+﻿namespace ToyRobotSimulator.Commands
 {
-    public struct RobotCommand
+    public class RobotCommand
     {
         public RobotCommandType CommandType { get; set; }
         public string? ErrorMessage { get; set; }
 
-        private RobotCommand(RobotCommandType commandType, string? errorMessage = null)
+        protected RobotCommand(RobotCommandType commandType, string? errorMessage = null)
         {
             CommandType = commandType;
             ErrorMessage = errorMessage;

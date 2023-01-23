@@ -1,4 +1,6 @@
-﻿namespace ToyRobotSimulator
+﻿using ToyRobotSimulator.Commands;
+
+namespace ToyRobotSimulator
 {
     public static class RobotCommandParser
     {
@@ -29,13 +31,65 @@
                 return RobotCommand.Valid(RobotCommandType.Report);
             }
 
-            if (input.Length >= 5 && string.Equals(input.Substring(0, 4), "place", StringComparison.InvariantCultureIgnoreCase))
+            if (input.Length >= 9 && string.Equals(input.Substring(0, 5), "place", StringComparison.InvariantCultureIgnoreCase))
             {
-                //todo implement Place parsing
-                return RobotCommand.Valid(RobotCommandType.Place);
+                return ParsePlaceCommand(input);
             }
 
             return RobotCommand.Invalid("Unsupported command. Try again");
+        }
+
+        private static RobotCommand ParsePlaceCommand(string input)
+        {
+            RobotOrientation? orientation = null;
+            int x, y = 0;
+
+            var success =
+                int.TryParse(input.Substring(6, 1), out x) &&
+                int.TryParse(input.Substring(8, 1), out y);
+
+            if (!success)
+            {
+                return RobotCommand.Invalid("Inalid place command. Try again.");
+            }
+
+            if (input.Length > 9)
+            {
+                orientation = TryParseOrientation(input);
+
+                if (orientation == null)
+                {
+                    return RobotCommand.Invalid("Inalid place command. Try again.");
+                }
+            }
+
+            return new PlaceCommand(x, y, orientation);
+        }
+
+        private static RobotOrientation? TryParseOrientation(string input)
+        {
+            var orientationInput = input.Substring(10);
+            if (string.Equals(orientationInput, "north", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return RobotOrientation.North;
+            }
+
+            if (string.Equals(orientationInput, "east", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return RobotOrientation.East;
+            }
+
+            if (string.Equals(orientationInput, "south", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return RobotOrientation.South;
+            }
+
+            if (string.Equals(orientationInput, "west", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return RobotOrientation.West;
+            }
+
+            return null;
         }
     }
 }
