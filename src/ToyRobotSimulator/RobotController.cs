@@ -2,7 +2,6 @@
 
 namespace ToyRobotSimulator
 {
-
     public class RobotController
     {
         private Dimensions TableDimensions { get; set; } = new Dimensions(6, 6);
@@ -22,7 +21,7 @@ namespace ToyRobotSimulator
 
             if (maybeCommand.CommandType == RobotCommandType.Invalid)
             {
-                return $"Invalid command: {maybeCommand.ErrorMessage}";
+                return $"{maybeCommand.ErrorMessage}";
             }
 
             ValidationResult validationResult;

@@ -36,7 +36,7 @@ namespace ToyRobotSimulator
                 return ParsePlaceCommand(input);
             }
 
-            return RobotCommand.Invalid("Unsupported command. Try again");
+            return RobotCommand.Invalid("Unsupported command. Try again.");
         }
 
         private static RobotCommand ParsePlaceCommand(string input)
@@ -50,7 +50,7 @@ namespace ToyRobotSimulator
 
             if (!success)
             {
-                return RobotCommand.Invalid("Inalid place command. Try again.");
+                return RobotCommand.Invalid("Invalid place command. Try again.");
             }
 
             if (input.Length > 9)
@@ -59,7 +59,7 @@ namespace ToyRobotSimulator
 
                 if (orientation == null)
                 {
-                    return RobotCommand.Invalid("Inalid place command. Try again.");
+                    return RobotCommand.Invalid("Invalid place command. Try again.");
                 }
             }
 
