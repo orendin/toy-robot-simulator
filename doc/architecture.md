@@ -12,31 +12,13 @@ I include this architecture doc since it is a template I use for more complex ap
 
 # 2 Constraints
 
-See constraints layed out in the [task-description.md](./task-description.md) file.
+See explicit requirement constraints layed out in the [task-description.md](./task-description.md) file.
 
-## Business Constraints
+## Assumptions
+Because of the bare-bones state of the requirements, the following assumptions were made:
 
-| Name | Explanation | Consequences |
-| ---- | ----------- | ------------ |
-| -    | -           | -            |
-
-## Technical Constraints
-
-| Name | Explanation | Consequences |
-| ---- | ----------- | ------------ |
-| -    | -           | -            |
-
-## Political Constraints
-
-| Name | Explanation | Consequences |
-| ---- | ----------- | ------------ |
-| -    | -           | -            |
-
-## Legal Constraints
-
-| Name | Explanation | Consequences |
-| ---- | ----------- | ------------ |
-| -    | -           | -            |
+1. The user is well versed in using the application. They know the commands and the expected behaviour of the application. Given this, detailed validation / error messaging was ommitted to save time.
+2. 
 
 # 3 Context and Scope
 
@@ -44,7 +26,7 @@ There is no explicit context given other than the immediate requirements.
 
 # 4 Solution Strategy
 
-Without long-term vision or context, the strategy is to keep the solution as simple as possible.
+Without long-term vision or context, the strategy is to keep the solution as simple as possible, while keeping the code readable and relatively easy to maintain / extend.
 
 # 5 Building Block View
 
