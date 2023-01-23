@@ -1,4 +1,4 @@
-﻿namespace ToyRobotSimulator
+﻿namespace ToyRobotSimulator.Commands
 {
     public enum RobotCommandType
     {
