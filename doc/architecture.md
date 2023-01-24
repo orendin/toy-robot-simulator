@@ -14,11 +14,11 @@ I include this architecture doc since it is a template I use for more complex ap
 
 See explicit requirement constraints layed out in the [task-description.md](./task-description.md) file.
 
-## Assumptions
+## 2.1 Assumptions
+
 Because of the bare-bones state of the requirements, the following assumptions were made:
 
 1. The user is well versed in using the application. They know the commands and the expected behaviour of the application. Given this, detailed validation / error messaging was ommitted to save time.
-2. 
 
 # 3 Context and Scope
 
@@ -26,7 +26,7 @@ There is no explicit context given other than the immediate requirements.
 
 # 4 Solution Strategy
 
-Without long-term vision or context, the strategy is to keep the solution as simple as possible, while keeping the code readable and relatively easy to maintain / extend.
+Based on the requirement "clean and easy to read, maintain and execute", the strategy is to keep the solution as simple as possible while keeping the code readable and relatively easy to maintain / extend.
 
 # 5 Building Block View
 
@@ -52,16 +52,18 @@ Not necessary at this stage.
 
 # 9 Architectural Decisions
 
-| Id  | What                                            | Why                                                                                                                              | When       | Who         |
-| --- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ---------- | ----------- |
-| AD1 | - | - | - | - |
+| Id  | What                          | Why                                                                  | When       | Who |
+| --- | ----------------------------- | -------------------------------------------------------------------- | ---------- | --- |
+| AD1 | No separate validator classes | Validation logic is still simple enough to keep it in the controller | 23/01/2023 | Ben |
 
 # 10 Quality Requirements
+
 See requirements layed out in the [task-description.md](./task-description.md) file.
 
 # 11 Risks and Technical Debt
 
 ## 11.1 Risks
+
 Not required for now.
 
 ## 11.2 Technical Debts
